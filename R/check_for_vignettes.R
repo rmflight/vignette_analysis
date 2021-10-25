@@ -96,8 +96,8 @@ git_dates_files = function(in_commit){
       dplyr::filter(path %in% "vignettes/") %>%
       dplyr::pull(name)
     
-    n_rnw = sum(grepl("Rnw$", commit_vignettes))
-    n_rmd = sum(grepl("Rmd$", commit_vignettes))
+    n_rnw = sum(grepl("[.][rsRS]nw$|[.][rsRS]tex$|[.]tex$", commit_vignettes, ignore.case = TRUE))
+    n_rmd = sum(grepl("[.]rmd$", commit_vignettes, ignore.case = TRUE))
     data.frame(date = commit_date, rnw = n_rnw, rmd = n_rmd)
   })
   if (inherits(out_frame, "try-error")) {
