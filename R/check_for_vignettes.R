@@ -106,3 +106,19 @@ git_dates_files = function(in_commit){
     return(out_frame)
   }
 }
+
+# bioconductor, every package should have a vignette
+# So if we don't have any at all for the whole commit
+# history, then something went wrong.d
+check_bioc = function(bioc_has_vignettes){
+  all_packages = unique(bioc_has_vignettes$package)
+  n_per = bioc_has_vignettes %>%
+    dplyr::mutate(n_vig = rmd + rnw) %>%
+    dplyr::group_by(package) %>%
+    dplyr::arrange(desc(n_vig)) %>%
+    dplyr::slice(n = 1) %>%
+    dplyr::select(n_vig, package)
+  n_zero = n_per %>%
+    dplyr::filter(n_vig == 0)
+  n_zero
+}

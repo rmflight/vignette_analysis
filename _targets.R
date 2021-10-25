@@ -18,6 +18,7 @@ tar_plan(
   
   all_bioc = dir("/big_data/data/bioconductor_2021-10-09", full.names = TRUE),
   bioc_has_vignettes = count_bioc_vignettes(all_bioc),
+  bioc_zero = check_bioc(bioc_has_vignettes),
   
   tar_render(explore_vignette_counts, "doc/explore_vignette_counts.Rmd")
 

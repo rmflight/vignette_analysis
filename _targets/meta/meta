@@ -1,0 +1,20 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|iteration|parent|children|seconds|warnings|error
+all_cran|stem|d06115274c89ed07|49daae05736b2381|571b19372d158a30|-2146608379||t18911.0866227852s|733bd6a3c900bcc7|162066|rds|vector|||0.382||
+cran_has_vignettes|stem|60a54ddaa8b1eae9|d58a99d2dd8cef30|7a74042002407577|149137703||t18911.5686926545s|8360d261e10bc381|66365|rds|vector|||173.88||
+current_cran|stem|d06115274c89ed07|49daae05736b2381|571b19372d158a30|-921053587||t18911.5949791802s|733bd6a3c900bcc7|162066|rds|vector|||0.276||
+archive_cran|stem|5836eefdc0bd0dc8|0039e0c63d6444a6|47188edf8cfe839f|-262325713||t18918.0446012147s|58d6b0a32742bdc8|562236|rds|vector|||1.171||
+current_has_vignettes|stem|16710d88d7d481ca|b10a464bfb1506bb|f8a9cbad44328043|-301104519||t18918.5880212629s|385925a641a471cf|273804|rds|vector|||317.946||
+archive_has_vignettes|stem|c33427d25734a6e1|37f03f5cba8cdb00|59cac90273f80c3f|-593620953||t18918.6190117275s|30b63d652e7fabc5|1098227|rds|vector|||2677.129|cannot open compressed file big_datadatacheck_knitr7833da5d2c24vtclDESCRIPTION, probable reason No such file or directory|
+all_bioc|stem|c88908a4d8e282d0|3452e0439bffa8ce|571b19372d158a30|43583130||t18920.0248412105s|4fd1ce049915a616|21261|rds|vector|||0.046||
+bioc_has_vignettes|stem|4102a838fde9aaa0|3868cbe056877e40|7e02d26dc43d723a|-1866647212||t18925.7070965572s|08dbd8b4f2535f62|2113389|rds|vector|||7267.135||
+explore_vignette_counts|stem|efd15c594ade72ca|5358d595efcd6145|211b47f94380d704|-1388036952|doc/explore_vignette_counts.html*doc/explore_vignette_counts.Rmd|t18925.7072556262s|4adfc61d078f7d5c|858952|file|vector|||13.602||
+check_bioc|function|83aa93d729f720b2||||||||||||||
+git_dates_files|function|7eb885450d382380||||||||||||||
+check_for_vignettes|function|4f6e055e7964e616||||||||||||||
+check_tar_list|function|eb13ed027ba334d3||||||||||||||
+create_tmp_dir|function|b62ff4152c5f4f6e||||||||||||||
+untar_pkg|function|09002871d1761ee5||||||||||||||
+check_bioc_git|function|daaa659041dcef3a||||||||||||||
+count_tgz_vignettes|function|763ceef89485cb3e||||||||||||||
+count_bioc_vignettes|function|539a8410f85e4699||||||||||||||
+bioc_zero|stem|97a9d09cc0b5411a|bd123ed437c9bdb3|22680b84f0ad713f|-221533982||t18925.7212541437s|c757ed0241776384|2574|rds|vector|||0.376||
