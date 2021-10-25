@@ -1,0 +1,54 @@
+---
+title: "Untitled Draft"
+author: "Report Author"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source(here::here("packages.R"))
+## target knits Rmds in their own session, so load libraries here.
+## source("here::here(packages.R"))
+```
+
+```{r load-targets, include=FALSE}
+tar_load(c(current_has_vignettes, archive_has_vignettes, bioc_has_vignettes))
+
+cran_has_vignettes = rbind(current_has_vignettes, archive_has_vignettes)
+```
+
+```{r get_date}
+cran_has_vignettes$date = as_date(cran_has_vignettes$date)
+cran_has_vignettes = cran_has_vignettes %>%
+  dplyr::filter(!is.na(date)) %>%
+  dplyr::mutate(month = paste0(year(date), ".", month(date)),
+                year = year(date),
+                vignette = rnw + rmd) %>%
+  unique() %>%
+  dplyr::group_by(package, year) %>%
+  dplyr::arrange(desc(vignette)) %>%
+  dplyr::slice(1)
+```
+
+```{r plot_cran}
+ggplot(cran_has_vignettes, aes(x = rnw)) +
+  geom_histogram(bins = 100) +
+  facet_wrap(~ year, ncol = 3)
+
+cran_has_vignettes %>%
+  dplyr::filter(rnw > 0) %>%
+ggplot(aes(x = rnw)) +
+  geom_histogram(bins = 100) +
+  facet_wrap(~ year, ncol = 3) +
+  scale_y_continuous(limits = c(0, 100))
+
+cran_has_vignettes %>%
+  dplyr::filter(rmd > 0) %>%
+ggplot(aes(x = rmd)) +
+  geom_histogram(bins = 100) +
+  facet_wrap(~ year, ncol = 3) +
+  scale_y_continuous(limits = c(0, 100))
+```

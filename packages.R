@@ -1,0 +1,15 @@
+## library() calls go here
+library(conflicted)
+library(dotenv)
+library(targets)
+library(tarchetypes)
+library(git2r)
+library(magrittr)
+library(knitrProgressBar)
+
+library(furrr)
+options(future.fork.enable = TRUE)
+future::plan(multicore(workers = 6))
+library(rmarkdown)
+library(lubridate)
+library(ggforce)
